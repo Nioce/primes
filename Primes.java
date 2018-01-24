@@ -1,3 +1,5 @@
+package adas;
+
 /**
  * Two examples of methods for determining whether an int is prime. 
  * You will be asked questions about this code on the loops test.
@@ -18,7 +20,9 @@ public class Primes
         for (int i=2; i<n; i++)
         {
             if (n % i == 0) return false;
-        }
+            else{
+                n= n%i;
+        }}
         
         return true;
     }
@@ -48,9 +52,9 @@ public class Primes
     public static void main(String[] args)
     {
         // test isPrime1
-        System.out.println( isPrime1(2) );
-        System.out.println( isPrime1(9) );
-        System.out.println( isPrime1(17) );
+        System.out.println( isPrime1(19) );
+        System.out.println( isPrime1(91) );
+        System.out.println( isPrime1(643) );
         
         // test isPrime2
         System.out.println( isPrime2(2) );

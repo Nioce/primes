@@ -17,12 +17,14 @@ public class Primes
      */
     public static boolean isPrime1(int n)
     {
+        double limit = Math.sqrt(n);
+        int count = 0;
+        if(n < 2) return false;
         for (int i=2; i<n; i++)
         {
             if (n % i == 0) return false;
-            else{
-                n= n%i;
-        }}
+            count++;
+            }
         
         return true;
     }
@@ -35,14 +37,16 @@ public class Primes
      */
     public static boolean isPrime2(int n)
     {
+        if(n < 2) return false;
         if (n == 2)        return true;
         else if (n % 2==0) return false;
         
         double limit = Math.sqrt(n);
-        
+        int count = 0;
         for (int i=3; i<=limit; i+=2)
         {
             if (n % i == 0) return false;
+            count++;
         }
         
         return true;
@@ -52,14 +56,18 @@ public class Primes
     public static void main(String[] args)
     {
         // test isPrime1
-        System.out.println( isPrime1(19) );
+        System.out.println( isPrime1(1) );
+        System.out.println( isPrime1(2) );
         System.out.println( isPrime1(91) );
         System.out.println( isPrime1(643) );
-        
+        System.out.println( isPrime1(15485863) );
+        System.out.println();
         // test isPrime2
-        System.out.println( isPrime2(2) );
-        System.out.println( isPrime2(9) );
-        System.out.println( isPrime2(17) );
+        System.out.println( isPrime2(1) );
+        System.out.println( isPrime2(19) );
+        System.out.println( isPrime2(91) );
+        System.out.println( isPrime2(643) );
+        System.out.println( isPrime2(15485863) );
         
         
         // Study the isPrime1 and isPrime2 methods to answer the following:
@@ -77,11 +85,13 @@ public class Primes
         // 2. The number 15,485,863 is the 1 millionth prime number. Suppose it is 
         //    tested in both isPrime1 and isPrime2 for primality. About how much
         //    faster will isPrime2 finish testing. Show how you determined your answer.
-        
+        // fIRST 15485861
+        // second 1967
         
         // 3. In isPrime2, why is the limit calculated before the loop rather than
         //    writing the loop as for (int i=3; i<=Math.sqrt(n); i=i+2)?
-        
+        // Cause you only need to proccess half of a loop, due to sqrt
+        // So you only cacluclate it once instead of every single loop 
         
         // 4. The number 1 is not prime, however both prime function say that it is.
         //    Negative numbers cannot be prime either. Fix each function so that all
@@ -92,6 +102,13 @@ public class Primes
         // Write blocks of code that use isPrime2 to solve the following problems:
         
         // 5. Generate a list of the first 50 prime numbers.
+        int count = 0;
+        int number = 0;
+        while (count < 50){
+           if (isPrime2(number)){
+               
+           }
+        }
         
         // 6. What is the 100th prime? the 1000th? The 12847th?
     

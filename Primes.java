@@ -106,13 +106,36 @@ public class Primes
         int number = 0;
         while (count < 50){
            if (isPrime2(number)){
-               
+               System.out.println(number);
+               count++;
            }
+           number++;
         }
-        
+        System.out.println();
         // 6. What is the 100th prime? the 1000th? The 12847th?
-    
+        count = 1;
+        number = 0;
+        int numbersqrt = 0;
+        while (count < 12848){
+           if (isPrime2(number)){
+               if(count==100||count==1000||count==12847){
+               System.out.println(number);
+               }
+           count++;
+           }
+        number++;
+        }
+        System.out.println();
         // 7. In the set of integers from 2-1000000, how many are prime?
+         count = 1;
+         number = 2;
+        while (number < 1000000){
+           if (isPrime2(number)){
+               count++;
+           }
+           number++;
+        }
+        System.out.println(count);
         
         // 8. What is the sum of the all prime numbers below 1000000?
         

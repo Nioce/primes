@@ -138,9 +138,28 @@ public class Primes
         System.out.println(count);
         
         // 8. What is the sum of the all prime numbers below 1000000?
+        count = 1;
+         number = 2;
+        while (number < 1000000){
+           if (isPrime2(number)){
+               count++;
+               System.out.println(number);
+           }
+           number++;
+        }
         
         // 9. What is the sum of the first 1000 prime numbers?
-
+        count = 1;
+        number = 2;
+        int sum = 0;
+        while (number < 1000){
+           if (isPrime2(number)){
+               count++;
+               sum = sum + number;
+           }
+           number++;
+        }
+        System.out.println(sum);
         
     }
     
